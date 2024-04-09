@@ -6,6 +6,11 @@ install bootstrap:
 npm i react-bootstrap bootstrap react-icons
 ## Available Scripts
 
+install react router
+npm i react-router-dom
+npm i react-router-bootstrap
+
+
 In the project directory, you can run:
 
 ### `npm start`
