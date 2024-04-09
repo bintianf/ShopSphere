@@ -22,7 +22,7 @@ ShopSphere offers a robust set of features designed for an optimal shopping expe
 
 ## Technologies Used
 
-- **Frontend**: React, Redux Toolkit
+- **Frontend**: React, Redux Toolkit, Bootstrap
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Payment Processing**: PayPal API, Stripe API for credit/debit card transactions
