@@ -1,0 +1,13 @@
+/* SearchBox.css */
+.custom-select {
+    appearance: none; /* Removes default system appearance */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    background: url('data:image/svg+xml;charset=UTF-8,%3csvg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"%3e%3cpath fill-rule="evenodd" clip-rule="evenodd" d="M5 8l5 5 5-5H5z" fill="%23000"%3e%3c/path%3e%3c/svg%3e') no-repeat;
+    background-position: right 10px center; /* Positions the arrow image to the right, centered vertically */
+    background-size: 15px; /* Sets a specific size for the arrow image */
+    border: 1px solid #ccc;
+    padding-right: 30px; /* Ensure there's space for the arrow */
+    border-radius: 4px;
+    box-shadow: none; /* Optional: Removes any default styling that might interfere */
+}

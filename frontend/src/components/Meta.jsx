@@ -11,9 +11,9 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: 'Welcome To ShopSphere',
+  title: 'ShopSphere',
   description: 'Your new favorite online shopping platform',
-  keywords: 'products, buy cheap products, worldwide',
+  keywords: 'products, cheap, worldwide',
 };
 
 export default Meta;

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
 import SearchBox from './SearchBox';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 import { resetCart } from '../slices/cartSlice';
 
 const Header = () => {
@@ -33,18 +33,17 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar className="ml-auto" expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>
-              <img src={logo} alt='ShopSphere' />
-              ShopSphere
+              <img src={logo} alt='ShopSphere'/>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='ms-auto'>
               <SearchBox />
+            <Nav className="ms-auto">
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <FaShoppingCart /> Cart
@@ -73,7 +72,6 @@ const Header = () => {
                   </Nav.Link>
                 </LinkContainer>
               )}
-
               {/* Admin Links */}
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title='Admin' id='adminmenu'>
