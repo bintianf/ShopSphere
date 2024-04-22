@@ -3,13 +3,15 @@ import { Table, Form, Button, Row, Col } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaTimes } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { useProfileMutation } from '../slices/usersApiSlice';
 import { useGetMyOrdersQuery } from '../slices/ordersApiSlice';
 import { setCredentials } from '../slices/authSlice';
+import { IoHomeOutline } from "react-icons/io5";
+import { FaChevronRight } from "react-icons/fa";
 
 const ProfileScreen = () => {
   const [name, setName] = useState('');
@@ -54,15 +56,34 @@ const ProfileScreen = () => {
 
   return (
     <Row>
+      <Row className="cart-headline align-items-center">
+      <Col lg={6} md={6}>
+        <div className="cart-title">
+          <h1>My Profile</h1>
+        </div>
+      </Col>
+      <Col lg={6} md={6}>
+        <ul className="cart-nav">
+          <li>
+            <Link to="/" className="homelink">
+              <IoHomeOutline className="homeicon" />
+              Home
+            </Link>
+          </li>
+          <li><FaChevronRight /></li>
+          <li>Profile</li>
+        </ul>
+      </Col>
+    </Row>
       <Col md={3}>
-        <h2>User Profile</h2>
+        <h2>Hi, {userInfo.name}</h2>
 
         <Form onSubmit={submitHandler}>
           <Form.Group className='my-2' controlId='name'>
             <Form.Label>Name</Form.Label>
             <Form.Control
               type='text'
-              placeholder='Enter name'
+              placeholder='Enter new name here'
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></Form.Control>

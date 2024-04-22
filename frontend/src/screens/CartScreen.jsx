@@ -14,7 +14,6 @@ import { addToCart, removeFromCart } from '../slices/cartSlice';
 import { IoHomeOutline } from "react-icons/io5";
 import { FaTrash } from 'react-icons/fa';
 import { FaChevronRight } from "react-icons/fa";
-import '../assets/styles/cart.css';
 
 const CartScreen = () => {
   const navigate = useNavigate();

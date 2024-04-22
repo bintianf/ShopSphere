@@ -21,6 +21,7 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import Meta from '../components/Meta';
 import { addToCart } from '../slices/cartSlice';
+import { IoArrowBack } from "react-icons/io5";
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -67,8 +68,11 @@ const ProductScreen = () => {
 
   return (
     <>
-      <Link className='btn btn-light my-3' to='/'>
-        Go Back
+      <Link to='/' className='btn btn-light my-3'>
+          <span className='d-flex align-items-center justify-content-center'>
+              <IoArrowBack />
+              Go Back
+          </span>
       </Link>
       {isLoading ? (
         <Loader />

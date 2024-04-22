@@ -8,6 +8,8 @@ import FormContainer from '../components/FormContainer';
 import { useRegisterMutation } from '../slices/usersApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { toast } from 'react-toastify';
+import { IoHomeOutline } from "react-icons/io5";
+import { FaChevronRight } from "react-icons/fa";
 
 const RegisterScreen = () => {
   const [name, setName] = useState('');
@@ -49,8 +51,27 @@ const RegisterScreen = () => {
   };
 
   return (
+    <Row>
+    <Row className="cart-headline align-items-center">
+    <Col lg={6} md={6}>
+      <div className="cart-title">
+        <h1>Register</h1>
+      </div>
+    </Col>
+    <Col lg={6} md={6}>
+      <ul className="cart-nav">
+        <li>
+          <Link to="/" className="homelink">
+            <IoHomeOutline className="homeicon" />
+            Home
+          </Link>
+        </li>
+        <li><FaChevronRight /></li>
+        <li>Register</li>
+      </ul>
+    </Col>
+  </Row>
     <FormContainer>
-      <h1>Register</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className='my-2' controlId='name'>
           <Form.Label>Name</Form.Label>
@@ -107,6 +128,7 @@ const RegisterScreen = () => {
         </Col>
       </Row>
     </FormContainer>
+    </Row>
   );
 };
 

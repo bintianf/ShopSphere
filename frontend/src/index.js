@@ -31,6 +31,7 @@ import UserEditScreen from './screens/admin/UserEditScreen';
 import store from './store';
 import { Provider } from 'react-redux';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import NotFoundPage from './screens/NotFoundPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -66,6 +67,7 @@ const router = createBrowserRouter(
         <Route path='/admin/product/:id/edit' element={<ProductEditScreen />} />
         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
 );

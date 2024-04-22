@@ -12,6 +12,8 @@ import {
   useGetPaypalClientIdQuery,
   usePayOrderMutation,
 } from '../slices/ordersApiSlice';
+import { IoHomeOutline } from "react-icons/io5";
+import { FaChevronRight } from "react-icons/fa";
 
 const OrderScreen = () => {
   const { id: orderId } = useParams();
@@ -107,7 +109,26 @@ const OrderScreen = () => {
     <Message variant='danger'>{error.data.message}</Message>
   ) : (
     <>
-      <h1>Order {order._id}</h1>
+        <Row className="cart-headline align-items-center">
+          <Col lg={6} md={6}>
+            <div className="cart-title">
+              <h1>Order Details</h1>
+            </div>
+          </Col>
+          <Col lg={6} md={6}>
+            <ul className="cart-nav">
+              <li>
+                <Link to="/" className="homelink">
+                  <IoHomeOutline className="homeicon" />
+                  Home
+                </Link>
+              </li>
+              <li><FaChevronRight /></li>
+              <li>Order</li>
+            </ul>
+          </Col>
+        </Row>
+      <h1>Order ID: {order._id}</h1>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>

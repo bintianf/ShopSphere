@@ -8,6 +8,8 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import Loader from '../components/Loader';
 import { useCreateOrderMutation } from '../slices/ordersApiSlice';
 import { clearCartItems } from '../slices/cartSlice';
+import { IoHomeOutline } from "react-icons/io5";
+import { FaChevronRight } from "react-icons/fa";
 
 const PlaceOrderScreen = () => {
   const navigate = useNavigate();
@@ -45,8 +47,27 @@ const PlaceOrderScreen = () => {
 
   return (
     <>
-      <CheckoutSteps step1 step2 step3 step4 />
       <Row>
+        <Row className="cart-headline align-items-center">
+        <Col lg={6} md={6}>
+          <div className="cart-title">
+            <h1>Order</h1>
+          </div>
+        </Col>
+        <Col lg={6} md={6}>
+          <ul className="cart-nav">
+            <li>
+              <Link to="/" className="homelink">
+                <IoHomeOutline className="homeicon" />
+                Home
+              </Link>
+            </li>
+            <li><FaChevronRight /></li>
+            <li>Order</li>
+          </ul>
+        </Col>
+      </Row>
+      <CheckoutSteps step1 step2 step3 step4 />
         <Col md={8}>
           <ListGroup variant='flush'>
             <ListGroup.Item>

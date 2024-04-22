@@ -4,7 +4,8 @@ import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
-
+import { IoHomeOutline } from "react-icons/io5";
+import { FaChevronRight } from "react-icons/fa";
 import { useLoginMutation } from '../slices/usersApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { toast } from 'react-toastify';
@@ -42,9 +43,27 @@ const LoginScreen = () => {
   };
 
   return (
+    <Row>
+      <Row className="cart-headline align-items-center">
+      <Col lg={6} md={6}>
+        <div className="cart-title">
+          <h1>Login</h1>
+        </div>
+      </Col>
+      <Col lg={6} md={6}>
+        <ul className="cart-nav">
+          <li>
+            <Link to="/" className="homelink">
+              <IoHomeOutline className="homeicon" />
+              Home
+            </Link>
+          </li>
+          <li><FaChevronRight /></li>
+          <li>Login</li>
+        </ul>
+      </Col>
+    </Row>
     <FormContainer>
-      <h1>Sign In</h1>
-
       <Form onSubmit={submitHandler}>
         <Form.Group className='my-2' controlId='email'>
           <Form.Label>Email Address</Form.Label>
@@ -67,7 +86,7 @@ const LoginScreen = () => {
         </Form.Group>
 
         <Button disabled={isLoading} type='submit' variant='primary'>
-          Sign In
+          Login
         </Button>
 
         {isLoading && <Loader />}
@@ -82,6 +101,7 @@ const LoginScreen = () => {
         </Col>
       </Row>
     </FormContainer>
+    </Row>
   );
 };
 
