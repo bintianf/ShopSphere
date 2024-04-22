@@ -9,13 +9,58 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaGoogle } from "react-icons/fa6";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import { SlPaypal } from "react-icons/sl";
+import { TfiReload } from "react-icons/tfi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    <div>
+      <div className="container shipping-info">
+        <ul>
+          <li>
+            <div className="media-icon">
+              <TbTruckDelivery />
+            </div>
+            <div className="media-body">
+              <h5>Free Shipping</h5>
+              <span>On order over $99</span>
+            </div>
+          </li>
+          <li>
+            <div className="media-icon">
+              <MdOutlineSupportAgent />
+            </div>
+            <div className="media-body">
+              <h5>24/7 Support.</h5>
+              <span>Live Chat Or Call.</span>
+            </div>
+          </li>
+          <li>
+            <div className="media-icon">
+              <SlPaypal />
+            </div>
+            <div className="media-body">
+              <h5>Online Payment.</h5>
+              <span>Secure Payment Services.</span>
+            </div>
+          </li>
+          <li>
+            <div className="media-icon">
+              <TfiReload />
+            </div>
+            <div className="media-body">
+              <h5>Easy Return.</h5>
+              <span>Hassle Free Shopping.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
     <footer className="footer text-white">
-      <Container className="footer-top py-4">
+      <Container className="footer-top py-5">
         <Row>
           <Col lg={3} md={4}>
             <LinkContainer to='/'>
@@ -46,7 +91,7 @@ const Footer = () => {
             <li><span>Saturday: </span> 10.00 am - 6.00 pm</li>
           </ul>
           <p className="mail">
-            <a href="mailto:support@shopgrids.com">support@shopgrids.com</a>
+            <a href="mailto:support@shopsphere.com">support@shopsphere.com</a>
           </p>
         </Col>
         <Col lg={3} md={6} className="single-footer our-app">
@@ -113,6 +158,7 @@ const Footer = () => {
         </Row>
       </Container>
     </footer>
+    </div>
   );
 };
 export default Footer;

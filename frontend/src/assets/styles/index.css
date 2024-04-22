@@ -9,6 +9,17 @@ body {
   font-size: 14px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  margin: 0px;
+  color: #081828;
+}
+
 main {
   min-height: 80vh;
 }
@@ -61,4 +72,15 @@ table th {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.header{
+  border-bottom: 1px solid #eee;
+}
+
+.out-of-stock {
+  color: red;
+}
+.in-stock {
+  color: rgb(3, 236, 3);
 }

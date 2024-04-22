@@ -7,8 +7,6 @@ import Message from './Message';
 import { useGetTopProductsQuery } from '../slices/productsApiSlice';
 import '../assets/styles/ProductCarousel.css';
 
-
-
 const ProductCarousel = () => {
   const { data: products, isLoading, error } = useGetTopProductsQuery();
   const carouselRef = useRef(null);
@@ -33,14 +31,16 @@ const ProductCarousel = () => {
                 <Image src={product.image} alt={product.name} fluid className="carousel-image"/>
               </Link>
               <div className="carousel-info">
+                <span className='title'>Big Sale Offer</span>
+                <span className='product-name'>{product.name}</span>
                 <p>{product.description}</p>
                 <Button href={`/product/${product._id}`} variant="primary" className="shop-now-button">
                   Shop Now
                 </Button>
               </div>
             </div>
-            <Carousel.Caption className='carousel-caption'>
-              <h2 className='text-white text-right'>
+            <Carousel.Caption>
+              <h2 className='text-white'>
                 {product.name} (${product.price})
               </h2>
             </Carousel.Caption>

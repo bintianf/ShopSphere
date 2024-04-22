@@ -24,6 +24,15 @@ const Product = ({ product }) => {
         </Card.Text>
 
         <Card.Text as='h3'>${product.price}</Card.Text>
+          {product.countInStock === 0 ? (
+            <Card.Text as='span' className="out-of-stock">
+              Out of Stock
+            </Card.Text>
+          ) : (
+            <Card.Text as='span' className="in-stock">
+              In Stock
+            </Card.Text>
+          )}
       </Card.Body>
     </Card>
   );
