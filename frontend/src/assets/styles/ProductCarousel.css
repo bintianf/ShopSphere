@@ -11,10 +11,9 @@
    }
   
    .carousel-image {
-    flex: 0 0 50%; /* No growth, no shrink, basis of 50% */
-    height: 100%; /* Image height is set to 100% of its container */
-    max-width: 100%; /* Ensures image does not exceed its container */
-    object-fit: cover;
+    height: 500px;       /* Fixed height for all images */
+    width: 650px;
+    object-fit: cover;   /* Covers the area, maintaining aspect ratio */
   }
 
   .carousel-info {
@@ -47,7 +46,16 @@
     font-size: 14px;
     line-height: 24px;
   }
-  
+
+  .carousel-caption {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
   .text-white {
     padding-bottom: 15px;
   }
@@ -57,12 +65,42 @@
   }
 
   @media (max-width: 768px) {
+    .carousel-image {
+      height: 200px; /* Smaller height for smaller devices */
+    }
     .carousel-flex-container {
       flex-direction: column;
     }
-  
     .carousel-image, .carousel-info {
       width: 100%; /* Full width for mobile view */
+    }
+    .carousel-info .title {
+      font-size: 7px;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+    .carousel-info .product-name{
+      font-size: 10px;
+      font-weight: 800;
+      color: #081828;
+    }
+    .carousel-info p {
+      margin-top: 10px;
+      font-size: 6px;
+      line-height: 10px;
+    }
+    .text-white {
+      font-size: 10px;
+    }
+    .shop-now-button {
+      font-size: 10px;
+      margin-top: 0px; /* Adds some space above the button */
+      margin-bottom: 3em; /* Adds some space above the button */
+      width: auto; /* Adjust width as needed, or use specific px/em values */
+    }
+    .carousel-caption {
+      height: 2em;
+      padding: 0.5em;
     }
   }
   .carousel-control-prev, .carousel-control-next {
